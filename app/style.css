@@ -132,6 +132,11 @@ nav ul {
 	column-gap: 3rem;
 }
 
+nav ul li {
+	/* border: 1px solid red; */
+	width: max-content;
+}
+
 nav a {
 	text-decoration: none;
 	color: var(--primaryColor);
@@ -185,6 +190,13 @@ nav a:focus::before {
 	text-shadow: 3px 3px 0 var(--secondaryColor);
 	color: var(--primaryColor);
 	position: relative;
+	/* border: 1px solid yellow; */
+	/* width: max-content; */
+	/* margin: 0 auto; */
+}
+
+.headerInfo p br:nth-child(1) {
+	display: none;
 }
 
 .headerInfo span {
@@ -237,6 +249,36 @@ nav a:focus::before {
 	to {
 		left: calc(100% + 3px);
 	}
+
+}
+
+.backToTop {
+	width: 32px;
+	right: min(7%, 32px);
+	aspect-ratio: 1;
+	background-color: transparent;
+	position: fixed;
+	top: 90vh;
+}
+
+.backToTop a {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	background-color: var(--primaryColor);
+	color: var(--secondaryColor);
+	display: grid;
+	place-items: center;
+	border: 2px solid var(--primaryColor);
+}
+
+.backToTop a:hover,
+.backToTop a:focus {
+	text-decoration: none;
+	color: var(--primaryColor);
+	background-color: var(--secondaryColor);
+	border: 2px solid var(--primaryColor);
 }
 
 hr {
@@ -515,6 +557,10 @@ footer .formContainer {
 	/* border: 1px solid blue; */
 }
 
+footer .formContainer .inputContainer {
+	/* border: 2px solid red; */
+}
+
 .formContainer h2 {
 	text-transform: uppercase;
 	color: var(--primaryColor);
@@ -716,6 +762,9 @@ footer .nMap {
 @media (max-width: 870px) {
 	main .menu .menuCoffees {
 		flex-direction: column;
+		border: 2px solid var(--lightgrey);
+		border-radius: 10px;
+		padding: 1.2rem 1.75rem 1.5rem;
 	}
 
 	main .menuCoffees > div {
@@ -752,9 +801,9 @@ footer .nMap {
 		display: block;
 		width: 1.5rem;
 		aspect-ratio: 1;
-		position: absolute;
+		position: fixed;
 		top: 2.7rem;
-		right: 2rem;
+		right: min(2rem, 6%);
 		background-color: transparent;
 		z-index: 1000;
 		/* border: 2px solid yellow; */
@@ -772,11 +821,11 @@ footer .nMap {
 
 	header .mobileNavToggle span div:nth-child(1) {
 		width: 30%;
-		left: 60%;
 	}
-
+	
 	header .mobileNavToggle span div:nth-child(3) {
 		width: 30%;	
+		left: 60%;
 	}
 
 	header .mobileNavToggle span div:nth-child(2) {
@@ -840,9 +889,21 @@ footer .nMap {
 
 }
 
+@media (max-width: 428px) {
+	.headerInfo p br:nth-child(1) {
+		display: inline;
+	}
+
+	.headerInfo {
+		width: 85%;
+	}
+
+}
+
 @media (max-width: 420px) {
 	.formContainer div {
 		width: 100%;
 	}
-
+	
 }
+

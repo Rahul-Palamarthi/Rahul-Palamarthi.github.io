@@ -13,3 +13,29 @@ navToggle.addEventListener("click", () => {
 	}
 });
 
+const navLinks = document.querySelector(".navUl").children;
+
+for (var i = 0; i < navLinks.length; i++) {
+	navLinks[i].addEventListener("click", () => {
+		nav.setAttribute("data-visible", false);
+		navToggle.setAttribute("aria-expanded", false);
+	});
+}
+
+const inputParent = document.querySelectorAll(".inputContainer");
+const input = Array.from(document.querySelectorAll("input[placeholder]"));
+
+input.forEach((element) => {
+	element.addEventListener("mouseover", () => {
+		inputParent[input.indexOf(element)].style.border = "2px solid var(--primaryColor)";
+	});
+
+	element.addEventListener("click", () => {
+		inputParent[input.indexOf(element)].style.border = "2px solid var(--primaryColor)";
+	});
+
+	element.addEventListener("mouseout", () => {
+		inputParent[input.indexOf(element)].style.border = "2px solid var(--lightgrey)";
+	});
+});
+
