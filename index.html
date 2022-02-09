@@ -5,12 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Corner Cafe</title>
+		<link rel="icon" href="/images/logoImg.png" type="image/png" />
 		<link rel="stylesheet" href="/app/style.css" />
 		<script src="../app/script.js" defer></script>
 		<script src="https://kit.fontawesome.com/d28415ff34.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<header id="home">
+			<div class="emptyNav"></div>
 			<div class="mobileNavToggle" aria-controls="primaryNavigation" aria-expanded="false">
 				<span>
 					<div class="navToggleBar"></div>
@@ -26,7 +28,7 @@
 				</div>
 				<nav id="primaryNavigation" data-visible="false">
 					<ul class="navUl">
-						<li><a href="#home">Home</a></li>
+						<li class="active"><a href="#home">Home</a></li>
 						<li><a href="#events">Events</a></li>
 						<li><a href="#menu">Menu</a></li>
 						<li><a href="#about">About</a></li>
@@ -95,7 +97,10 @@
 					<div class="menuCoffees">
 						<div class="menuCoffeesInfo">
 							<h3>Espresso Coffee</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam culpa vitae, quo amet nemo enim id temporibus incidunt expedita sunt fugiat ipsa aspernatur dolorum rerum officiis illum. Hic, saepe eius?</p>
+							<p>
+								Espresso is a coffee-brewing method of Italian origin, in which a small amount of nearly boiling water (about 90 °C or 190 °F) is forced under 9–10 bars (900–1,000 kPa; 130–150 psi) of pressure through finely-ground
+								coffee beans. Espresso coffee can be made with a wide variety of coffee beans and roast degrees.
+							</p>
 						</div>
 						<div class="img">
 							<img src="../images/espressoCoffeeImg.jpg" alt="Espresso Coffee img" />
@@ -104,7 +109,10 @@
 					<div class="menuCoffees">
 						<div class="menuCoffeesInfo">
 							<h3>Black Coffee</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam culpa vitae, quo amet nemo enim id temporibus incidunt expedita sunt fugiat ipsa aspernatur dolorum rerum officiis illum. Hic, saepe eius?</p>
+							<p>
+								Black coffee is a beverage made from roasted coffee beans. The beans are ground and soaked in water, which releases their flavor, color, caffeine content, and nutrients. Although coffee is often served hot, it can also
+								be served iced.
+							</p>
 						</div>
 						<div class="img">
 							<img src="../images/blackCoffeeImg.jpg" alt="Black Coffee img" />
@@ -113,7 +121,10 @@
 					<div class="menuCoffees">
 						<div class="menuCoffeesInfo">
 							<h3>Cold Coffee</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam culpa vitae, quo amet nemo enim id temporibus incidunt expedita sunt fugiat ipsa aspernatur dolorum rerum officiis illum. Hic, saepe eius?</p>
+							<p>
+								Cold brew is simply coffee that has been brewed with cold rather than hot water and usually involves a long steeping process—anywhere between 12-24 hours. In terms of flavor, cold brew is generally characterized as
+								smooth, low-acid, and heavier than its hot brewed counterparts.
+							</p>
 						</div>
 						<div class="img">
 							<img src="../images/coldCoffeeImg.jpeg" alt="Cold Coffee img" />
@@ -132,19 +143,19 @@
 				</h2>
 				<div class="aboutContainer">
 					<div class="aboutCrew">
-						<h3>Jack</h3>
+						<h3>Harry Smith</h3>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nesciunt ullam corporis animi nulla. Laudantium voluptatum soluta molestiae beatae architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 						<p>Nemo exercitationem nihil, quod asperiores praesentium expedita a temporibus earum velit labore dolorum dolorem nostrum? Molestiae, quod.</p>
 						<img src="/images/person1.jpg" alt="person1" />
 					</div>
 					<div class="aboutCrew">
-						<h3>Jack</h3>
+						<h3>Luna Carl</h3>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nesciunt ullam corporis animi nulla. Laudantium voluptatum soluta molestiae beatae architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 						<p>Nemo exercitationem nihil, quod asperiores praesentium expedita a temporibus earum velit labore dolorum dolorem nostrum? Molestiae, quod.</p>
 						<img src="/images/person2.jpg" alt="person1" />
 					</div>
 					<div class="aboutCrew">
-						<h3>Jack</h3>
+						<h3>Josh Morton</h3>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nesciunt ullam corporis animi nulla. Laudantium voluptatum soluta molestiae beatae architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 						<p>Nemo exercitationem nihil, quod asperiores praesentium expedita a temporibus earum velit labore dolorum dolorem nostrum? Molestiae, quod.</p>
 						<img src="/images/person3.jpg" alt="person1" />
@@ -208,7 +219,7 @@
 					<li><a href="#events">Events</a></li>
 					<li><a href="#menu">Menu</a></li>
 					<li><a href="#about">About</a></li>
-					<li><a href="#contactUs">Contact Us</a></li>
+					<li class="active"><a href="#contactUs">Contact Us</a></li>
 				</ul>
 			</div>
 		</footer>

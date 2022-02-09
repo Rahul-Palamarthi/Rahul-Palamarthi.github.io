@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
 
 ::-webkit-scrollbar {
 	width: 1rem;
@@ -45,6 +46,7 @@
 	--rowdies: "Rowdies", cursive;
 	--nunito: "Nunito Sans", sans-serif;
 	--roboto: "Roboto", sans-serif;
+	--dongle: "Dongle", sans-serif;
 }
 
 *,
@@ -77,6 +79,29 @@ header {
 	overflow-x: hidden;
 }
 
+header .emptyNav {
+	display: none;
+	position: fixed;
+	top: 10px;
+	left: 1px;
+	width: 30vw;
+	height: calc(100% - 20px);
+	border-right: 1.5px solid var(--primaryColor);
+	animation: navBorder var(--navBarTransitionDuration) ease-in;
+}
+
+@keyframes navBorder {
+	0% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 header .mobileNavToggle {
 	display: none;
 }
@@ -89,7 +114,6 @@ header .mobileNavToggle div {
 	display: flex;
 	width: 85%;
 	margin: 0 auto;
-	/* border: 1px solid yellow; */
 	padding: 2.5rem 0;
 	justify-content: space-between;
 	align-items: center;
@@ -103,7 +127,6 @@ header .logoName span img {
 }
 
 header .logoName {
-	/* border: 1px solid greenyellow; */
 	font-size: 1.25rem;
 	background: var(--logoBGGradient);
 	-webkit-background-clip: text;
@@ -122,7 +145,6 @@ header .logoName {
 }
 
 nav {
-	/* border: 1px solid tomato; */
 	padding: 0.4rem 0;
 }
 
@@ -133,8 +155,17 @@ nav ul {
 }
 
 nav ul li {
-	/* border: 1px solid red; */
 	width: max-content;
+}
+
+nav ul .active a {
+	color: var(--teritaryColor);
+}
+
+nav ul .active a::before {
+	transform: scaleX(1);
+	transform-origin: left;
+	cursor: pointer;
 }
 
 nav a {
@@ -144,7 +175,6 @@ nav a {
 	font-size: 1.2rem;
 	position: relative;
 	font-family: "Rowdies", cursive;
-	/* border: 1px solid red; */
 }
 
 nav a::before {
@@ -180,7 +210,6 @@ nav a:focus::before {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	/* border: 1px solid red; */
 	margin: 0 auto;
 }
 
@@ -190,9 +219,6 @@ nav a:focus::before {
 	text-shadow: 3px 3px 0 var(--secondaryColor);
 	color: var(--primaryColor);
 	position: relative;
-	/* border: 1px solid yellow; */
-	/* width: max-content; */
-	/* margin: 0 auto; */
 }
 
 .headerInfo p br:nth-child(1) {
@@ -249,7 +275,6 @@ nav a:focus::before {
 	to {
 		left: calc(100% + 3px);
 	}
-
 }
 
 .backToTop {
@@ -258,7 +283,7 @@ nav a:focus::before {
 	aspect-ratio: 1;
 	background-color: transparent;
 	position: fixed;
-	top: 90vh;
+	bottom: 5vh;
 }
 
 .backToTop a {
@@ -273,8 +298,13 @@ nav a:focus::before {
 	border: 2px solid var(--primaryColor);
 }
 
-.backToTop a:hover,
-.backToTop a:focus {
+.backToTop a:active {
+	text-decoration: none;
+	background-color: var(--primaryColor) !important;
+	color: var(--secondaryColor) !important;
+}
+
+.backToTop a:hover {
 	text-decoration: none;
 	color: var(--primaryColor);
 	background-color: var(--secondaryColor);
@@ -293,7 +323,6 @@ hr {
 main .workingHours {
 	color: var(--primaryColor);
 	font-family: "Roboto", sans-serif;
-	/* border: 1px solid red; */
 	width: 85%;
 	margin: 2.5rem auto 0;
 	display: flex;
@@ -305,7 +334,6 @@ main .workingHours {
 
 main .workingHours div {
 	width: 100%;
-	/* border: 1px solid blue; */
 	text-align: center;
 }
 
@@ -336,41 +364,40 @@ main .workingHours span i {
 
 main .workingHours p {
 	margin: 0.5rem 0;
-	font-size: 1.1rem;
+	font-size: 1.6rem;
+	line-height: 0.8rem;
+	font-family: var(--dongle);
 }
 
 main .workingHours p:nth-child(2) {
 	margin: 1.5rem 0 0 0;
-	/* border: 1px solid red; */
 }
 
 main .workingHours img {
 	width: min(100%, 350px);
 	margin: 0 auto;
+	border-radius: 15px;
 }
 
 main .events {
 	color: var(--teritaryColor);
 	font-family: var(--roboto);
-	/* border: 1px solid red; */
 	width: 85%;
 	margin: 0 auto;
 	display: flex;
 	padding: 0.5rem 0 0;
 	align-items: center;
 	justify-content: space-around;
-	/* column-gap: 17rem; */
 }
 
 main .events div {
 	width: 100%;
-	/* border: 1px solid burlywood; */
 	text-align: center;
 }
 
 main .events img {
-	/* width: 350px; */
 	width: min(100%, 350px);
+	border-radius: 15px;
 }
 
 main .events h2 {
@@ -400,9 +427,10 @@ main .events span i {
 
 main .events p {
 	margin: 0.25rem 0 0 1rem;
-	font-size: 1.1rem;
-	line-height: 1.5rem;
+	line-height: 1.2rem;
 	padding: 0 1rem;
+	font-size: 1.6rem;
+	font-family: var(--dongle);
 }
 
 main .events .workshop p:nth-child(2) {
@@ -411,14 +439,12 @@ main .events .workshop p:nth-child(2) {
 
 main .menu {
 	color: var(--primaryColor);
-	/* border: 1px solid yellow; */
 }
 
 main .menu h2 {
 	font-family: var(--roboto);
 	text-align: center;
 	position: relative;
-	/* border: 1px solid tomato; */
 	padding: 0.5rem 0 1rem;
 }
 
@@ -447,13 +473,11 @@ main .menu .menuCoffees {
 	align-items: center;
 	justify-content: center;
 	column-gap: 3rem;
-	/* border: 1px solid blue; */
 }
 
 main .menuCoffees > div {
 	text-align: center;
 	width: 100%;
-	/* border: 1px solid tomato; */
 	font-family: var(--roboto);
 }
 
@@ -462,20 +486,20 @@ main .menuCoffees h3 {
 }
 
 main .menuCoffees p {
-	font-size: 1.1rem;
 	margin: 0.5rem 0 0;
-	line-height: 1.5rem;
+	line-height: 1.4rem;
+	font-size: 1.6rem;
+	font-family: var(--dongle);
 }
 
 main .menuCoffees .img {
-	/* text-align: center; */
-	/* border: 1px solid green; */
 }
 
 main .menuCoffees img {
 	width: min(100%, 350px);
 	height: 233.79px;
 	object-fit: cover;
+	border-radius: 15px;
 }
 
 main .about {
@@ -523,9 +547,10 @@ main .about .aboutCrew h3 {
 }
 
 main .aboutCrew p {
-	font-size: 1.1rem;
+	font-size: 1.6rem;
 	margin: 0.25rem 0;
 	line-height: 1.5rem;
+	font-family: var(--dongle);
 }
 
 main .aboutCrew img {
@@ -542,7 +567,6 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* border: 1px solid orange; */
 	width: 85%;
 	margin: 0 auto 1rem;
 	column-gap: 2rem;
@@ -554,11 +578,9 @@ footer > div {
 }
 
 footer .formContainer {
-	/* border: 1px solid blue; */
 }
 
 footer .formContainer .inputContainer {
-	/* border: 2px solid red; */
 }
 
 .formContainer h2 {
@@ -580,7 +602,6 @@ footer .formContainer .inputContainer {
 .formContainer span i {
 	color: var(--primaryColor);
 	font-size: 1rem;
-	/* border: 1px solid red; */
 	width: 16px;
 	height: 16.6px;
 }
@@ -588,13 +609,9 @@ footer .formContainer .inputContainer {
 .formContainer input {
 	background-color: var(--black);
 	border: none;
-	/* width: 92%; */
 	width: calc(100% - 25px);
-	/* max-width: 92%; */
 	padding: 1rem 0 1rem 0.3rem;
-	/* border: 1px solid tomato; */
 	color: var(--primaryColor);
-	/* margin: 0 0 0 0rem; */
 	outline: none;
 	font-family: "Roboto", sans-serif;
 }
@@ -627,7 +644,6 @@ footer .formContainer .inputContainer {
 }
 
 footer .mediaLinks {
-	/* border: 1px solid yellow; */
 	text-align: center;
 }
 
@@ -678,7 +694,6 @@ footer .mediaLinks h2 span img {
 }
 
 footer .nMap {
-	/* border: 1px solid red; */
 }
 
 .nMap ul {
@@ -687,11 +702,20 @@ footer .nMap {
 	list-style: none;
 }
 
+footer .nMap .active a {
+	color: var(--teritaryColor);
+}
+
+footer .nMap .active a::before {
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
 .nMap a {
 	text-decoration: none;
 	color: var(--primaryColor);
 	font-size: 1.25rem;
-	font-family: "Nunito Sans", sans-serif;
+	font-family: var(--rowdies);
 	font-weight: 600;
 	display: inline-block;
 	padding: 0.5rem 0;
@@ -730,7 +754,6 @@ footer .nMap {
 @media (max-width: 975px) {
 	header .headerContainer {
 		row-gap: 1rem;
-		/* border: 1px solid tomato; */
 		padding: 2rem 0;
 		flex-direction: column;
 	}
@@ -751,9 +774,7 @@ footer .nMap {
 
 	.formContainer div {
 		width: max(310px, 60%);
-		/* min-width: 350px; */
 	}
-
 }
 
 /* ============================
@@ -774,7 +795,6 @@ footer .nMap {
 	main .menuCoffees .img {
 		margin: 1rem 0 0;
 	}
-
 }
 
 @media (max-width: 825px) {
@@ -790,13 +810,16 @@ footer .nMap {
 	main .events div:nth-child(1) {
 		margin: 1rem 0 0 0;
 	}
-
 }
 
 /* ===============================
    media qwery for mobile for menu
    =============================== */
 @media (max-width: 600px) {
+	header .emptyNav {
+		z-index: 100;
+	}
+
 	header .mobileNavToggle {
 		display: block;
 		width: 1.5rem;
@@ -806,7 +829,6 @@ footer .nMap {
 		right: min(2rem, 6%);
 		background-color: transparent;
 		z-index: 1000;
-		/* border: 2px solid yellow; */
 	}
 
 	header .mobileNavToggle span div {
@@ -822,9 +844,9 @@ footer .nMap {
 	header .mobileNavToggle span div:nth-child(1) {
 		width: 30%;
 	}
-	
+
 	header .mobileNavToggle span div:nth-child(3) {
-		width: 30%;	
+		width: 30%;
 		left: 60%;
 	}
 
@@ -834,7 +856,7 @@ footer .nMap {
 	}
 
 	header .mobileNavToggle[aria-expanded="true"] span div:nth-child(1),
-	header .mobileNavToggle[aria-expanded="true"] span div:nth-child(3){
+	header .mobileNavToggle[aria-expanded="true"] span div:nth-child(3) {
 		visibility: hidden;
 	}
 
@@ -860,7 +882,6 @@ footer .nMap {
 	}
 
 	header nav {
-		/* border: 1px solid tomato; */
 		background: var(--BGGradientForNav);
 		backdrop-filter: blur(15px);
 		position: fixed;
@@ -886,7 +907,6 @@ footer .nMap {
 		top: 50%;
 		transform: translateY(-75%);
 	}
-
 }
 
 @media (max-width: 428px) {
@@ -897,13 +917,10 @@ footer .nMap {
 	.headerInfo {
 		width: 85%;
 	}
-
 }
 
 @media (max-width: 420px) {
 	.formContainer div {
 		width: 100%;
 	}
-	
 }
-
