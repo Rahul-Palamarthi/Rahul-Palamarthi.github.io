@@ -44,7 +44,6 @@ btns.forEach((element) => {
 });
 
 const backToTop = document.querySelector(".backToTop");
-console.log(backToTop);
 
 window.onscroll = () => {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -70,3 +69,4 @@ input.forEach((element) => {
 		inputParent[input.indexOf(element)].style.border = "2px solid var(--lightgrey)";
 	});
 });
+

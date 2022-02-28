@@ -599,7 +599,7 @@ footer .formContainer .inputContainer {
 	margin: 1.2rem auto;
 }
 
-.formContainer span i {
+.formContainer span svg {
 	color: var(--primaryColor);
 	font-size: 1rem;
 	width: 16px;
@@ -614,6 +614,7 @@ footer .formContainer .inputContainer {
 	color: var(--primaryColor);
 	outline: none;
 	font-family: "Roboto", sans-serif;
+	letter-spacing: 1px;
 }
 
 .formContainer input:hover::placeholder,
@@ -641,6 +642,16 @@ footer .formContainer .inputContainer {
 	border: 2px solid var(--teritaryColor);
 	color: var(--secondaryColor);
 	background-color: var(--primaryColor);
+}
+
+footer .formContainer input:-webkit-autofill,
+footer .formContainer input:-webkit-autofill:hover,
+footer .formContainer input:-webkit-autofill:focus,
+footer .formContainer input:-webkit-autofill:active {
+	background-color: var(--black) !important;
+	color: var(--primaryColor) !important;
+	transition: all 5000s ease-in-out 0s !important;
+	transition-property: background-color, color !important;
 }
 
 footer .mediaLinks {
@@ -679,17 +690,17 @@ footer .mediaLinks h2 span img {
 	text-decoration: none;
 }
 
-.mediaLinks .fab {
+.mediaLinks svg {
 	color: var(--primaryColor);
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 .mediaLinks ul li:nth-child(4) a i {
 	font-size: 1.5rem;
 }
 
-.mediaLinks a:hover i,
-.mediaLinks a:focus i {
+.mediaLinks a:hover svg,
+.mediaLinks a:focus svg {
 	color: var(--teritaryColor);
 }
 
