@@ -35,6 +35,7 @@
 	--secondaryColor: #3d2b25;
 	--teritaryColor: #caaa83;
 	--black: #000011;
+	--grey: #292828;
 	--logoBGGradient: linear-gradient(to right, #f3efe9, #f3e0bc, #f4e8c6, #f5f0db, #edd6aa, #e1bf9b, #caaa83, #c5a176, #c89565, #b78862, #b08159, #a67451, #9d6c42, #8c5c3d, #784c36);
 	--lightgrey: rgba(191, 189, 189, 0.51);
 	--BGGradientForNav: linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333));
@@ -86,7 +87,6 @@ header .emptyNav {
 	left: 1px;
 	width: 30vw;
 	height: calc(100% - 20px);
-	border-right: 1.5px solid var(--primaryColor);
 	animation: navBorder var(--navBarTransitionDuration) ease-in;
 }
 
@@ -535,22 +535,27 @@ main .aboutContainer {
 
 main .about .aboutCrew {
 	width: 100%;
-	border: 2px solid var(--lightgrey);
+	/* border: 2px solid var(--lightgrey); */
+	box-shadow: 2px 2px 5px 0 var(--grey);
 	border-radius: 10px;
 	padding: 1.2rem 1.75rem 1.5rem;
-	text-align: center;
+	background: var(--grey);
 }
 
 main .about .aboutCrew h3 {
 	font-size: 1.5rem;
-	margin: 0 0 0.5rem;
+	margin: 0 0 0.75rem;
 }
 
 main .aboutCrew p {
 	font-size: 1.6rem;
-	margin: 0.25rem 0;
+	margin: 0.25rem 0 0.25rem;
 	line-height: 1.5rem;
 	font-family: var(--dongle);
+}
+
+main .aboutCrew .img {
+	text-align: center;
 }
 
 main .aboutCrew img {
@@ -794,16 +799,19 @@ footer .nMap .active a::before {
 @media (max-width: 870px) {
 	main .menu .menuCoffees {
 		flex-direction: column;
-		border: 2px solid var(--lightgrey);
+		/* border: 2px solid var(--lightgrey); */
 		border-radius: 10px;
 		padding: 1.2rem 1.75rem 1.5rem;
+		background: var(--grey);
 	}
 
 	main .menuCoffees > div {
-		width: 80%;
+		width: 100%;
+		text-align: start;
 	}
 
 	main .menuCoffees .img {
+		text-align: center;
 		margin: 1rem 0 0;
 	}
 }
@@ -901,7 +909,8 @@ footer .nMap .active a::before {
 		top: 0;
 		width: 70vw;
 		height: 100vh;
-		border-radius: 10px 0 0 10px;
+		border-radius: 0 0 0 40px;
+		box-shadow: 2px 2px 20px 0 var(--teritaryColor);
 		transform: translateX(100%);
 		transition: transform var(--navBarTransitionDuration) ease-in;
 	}
